@@ -15,7 +15,7 @@ class bookLens:
     name_to_novelID = {}
     novelID_to_genres = {}
     
-    novelPath = './books.csv'
+    novelPath = r'./books.csv'
     
     def loadNovelLensLatestSmall(self):
 

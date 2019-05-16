@@ -8,13 +8,10 @@ class tmdblens:
 
     movieID_to_tmdbid = {}
    
-    linksPath = './links.csv'
+    linksPath = r'./links.csv'
     
     
     def loadtmdbLensLatestSmall(self):
-
-        # Look for files relative to the directory we are running from
-        os.chdir(os.path.dirname(sys.argv[0]))
         ratingsDataset = 0
         self.movieID_to_tmdbid = {}
       
