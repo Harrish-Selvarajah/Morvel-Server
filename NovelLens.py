@@ -4,9 +4,7 @@ Created on Sun Apr 21 21:33:12 2019
 
 @author: Harrish Selvarajah
 """
-import os
 import csv
-import sys
 from collections import defaultdict
 
 from surprise import Dataset
@@ -19,8 +17,8 @@ class NovelLens:
     name_to_novelID = {}
     novelID_to_genres = {}
     
-    ratingsPath = './data/novel-data/ratings1.csv'
-    novelPath = './data/novel-data/books.csv'
+    ratingsPath = '/ratings1.csv'
+    novelPath = './books.csv'
     
     def loadNovelLensLatestSmall(self):
 

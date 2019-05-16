@@ -4,9 +4,8 @@ Created on Sun Apr 21 21:33:12 2019
 
 @author: Harrish Selvarajah
 """
-import os
+
 import csv
-import sys
 from collections import defaultdict
 
 class Noveldata:
@@ -15,12 +14,11 @@ class Noveldata:
     name_to_novelID = {}
     novelID_to_genres = {}
     
-    novelPath = './data/novel-data/NovelLens.csv'
+    novelPath = './NovelLens.csv'
     
     def loadNovelLensLatestSmall(self):
 
-        # Look for files relative to the directory we are running from
-        #os.chdir(os.path.dirname(sys.argv[0]))
+   
 
         
         self.novelID_to_name = {}

@@ -12,7 +12,7 @@ class MovieData:
     movieID_to_name = {}
     name_to_movieID = {}
     movieID_to_genres = {}
-    moviesPath = './data/ml-latest-small/movies.csv'
+    moviesPath = './movies.csv'
     
     def loadMovieLensLatestSmall(self):
 

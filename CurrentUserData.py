@@ -5,9 +5,7 @@ Created on Sun Apr 21 21:33:12 2019
 @author: Harrish Selvarajah
 """
 
-import os
 import csv
-import sys
 from collections import defaultdict
 from movieCF import movieCF
 
@@ -23,11 +21,7 @@ class CurrentUserData():
     moviesPath = "./currentuser.csv"
     
     def loadCurrentData(self):
-
-        # Look for files relative to the directory we are running from
-        #os.chdir(os.path.dirname(sys.argv[0]))
-
-        
+ 
         self.movieID_to_name = {}
         self.name_to_movieID = {}
         self.movieID_to_genres = {}

@@ -8,7 +8,7 @@ class tmdblens:
 
     movieID_to_tmdbid = {}
    
-    linksPath = './data/ml-latest-small/links.csv'
+    linksPath = './links.csv'
     
     
     def loadtmdbLensLatestSmall(self):
