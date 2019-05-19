@@ -1,6 +1,5 @@
-import os
+
 import csv
-import sys
 import re
 
 from surprise import Dataset
@@ -17,9 +16,6 @@ class MovieLens:
     moviesPath = r'./movies.csv'
     
     def loadMovieLensLatestSmall(self):
-
-        
-       
 
         ratingsDataset = 0
         self.movieID_to_name = {}

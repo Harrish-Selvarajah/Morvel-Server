@@ -9,6 +9,7 @@ from surprise import KNNBasic
 import heapq
 from collections import defaultdict
 from operator import itemgetter
+from bookimgurl import bookimgurl
 
 
 class novelCF:
@@ -19,7 +20,9 @@ class novelCF:
 
 # Load our data set and compute the user similarity matrix
         ml = NovelLens()
+        bi = bookimgurl()
         data = ml.loadNovelLensLatestSmall()
+        datab = bi.loadurlLensLatestSmall()
 
         trainSet = data.build_full_trainset()
 
@@ -61,6 +64,7 @@ class novelCF:
         pos = 0
         noveldatapro = []
         novels = []
+        novellinks = []
         for itemID, ratingSum in sorted(candidates.items(), key=itemgetter(1), reverse=True):
     
          if not itemID in watched:
@@ -73,7 +77,14 @@ class novelCF:
             print("The top 10 novels for the user: " + testSubject )
             print(noveldatapro)
             break
-        return novels
+        
+        lenght = 10
+        for i in range(lenght):
+            novellinks.append(bi.getNovellink(int(noveldatapro[i])))
+            
+        print(novellinks)
+        
+        return novellinks
           
 
 
