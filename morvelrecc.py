@@ -16,6 +16,7 @@ ml = CurrentUserData()
 genres1 = {}
 genres2 = {}
 datan = nl.loadNovelLensLatestSmall()+1
+from bookimgurl import bookimgurl
 
 sortedlist = []
 others = {}
@@ -30,7 +31,8 @@ class morvelrecc:
         
          
         datam = ml.loadCurrentData()+1
-        
+        bi = bookimgurl()
+        datab = bi.loadurlLensLatestSmall()
         genresm = ml.getGenress()
         genresn = nl.getGenress() 
         similarities = np.zeros((datan, datan))
@@ -74,8 +76,13 @@ class morvelrecc:
         for i in range(10):
             topreco.append(sortedlist[i])
             
-         
-        return topreco
+        novellinks = []
+        lenght = 10
+        for i in range(lenght):
+            novellinks.append(bi.getNovellink(int(topreco[i])))
+            
+        print(novellinks)
+        return novellinks
          
      def computeGenreSimilarity(self, movie, novel, genresm, genresn):
          ml = CurrentUserData()
