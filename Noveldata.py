@@ -17,10 +17,7 @@ class Noveldata:
     novelPath = r'./NovelLens.csv'
     
     def loadNovelLensLatestSmall(self):
-
-   
-
-        
+       
         self.novelID_to_name = {}
         self.novelName_to_novelID = {}
         self.novelID_to_genres = {}        

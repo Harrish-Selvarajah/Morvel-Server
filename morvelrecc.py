@@ -15,7 +15,7 @@ nl = Noveldata()
 ml = CurrentUserData()        
 genres1 = {}
 genres2 = {}
-datan = nl.loadNovelLensLatestSmall()+1
+
 from bookimgurl import bookimgurl
 
 sortedlist = []
@@ -29,7 +29,7 @@ class morvelrecc:
 
      def computesimilarityscore(self): 
         
-         
+        datan = nl.loadNovelLensLatestSmall()+1
         datam = ml.loadCurrentData()+1
         bi = bookimgurl()
         datab = bi.loadurlLensLatestSmall()
@@ -76,10 +76,14 @@ class morvelrecc:
         for i in range(10):
             topreco.append(sortedlist[i])
             
+        toprecoid = []
+        for i in range(10):
+            toprecoid.append(nl.getNovelID((topreco[i])))
+            
         novellinks = []
         lenght = 10
         for i in range(lenght):
-            novellinks.append(bi.getNovellink(int(topreco[i])))
+            novellinks.append(bi.getNovellink(int(toprecoid[i])))
             
         print(novellinks)
         return novellinks
