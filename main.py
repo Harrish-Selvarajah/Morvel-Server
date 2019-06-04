@@ -7,7 +7,7 @@ Created on Fri Apr 26 19:37:08 2019
 from movieCF import movieCF
 from novelCF import novelCF
 from morvelrecc import morvelrecc
-from ContentRecs import ContentRecs
+from contentm import contentm
 from NovelFinder import NovelFinder
 #import Neuralmovie.HybridTest 
 # =============================================================================
@@ -39,10 +39,10 @@ def get_movietonovel():#moveitonovel reco
     obj = morvelrecc()
     return jsonify({'cfmovietonovelarray': obj.computesimilarityscore()}) 
 
-@app.route('/getcontentfmovies/<userid>', methods=['GET'])
-def get_contentfmovies(userid):#content filtering 
-    obj2 = ContentRecs()
-    return jsonify({'cfmoviearray': obj2.contentf(userid)}) #pass the userID
+@app.route('/getcontentfmovies', methods=['GET'])
+def get_contentfmovies():
+    obj2 = contentm()
+    return jsonify({'cfmoviearray': obj2.computesimilarityscore()}) 
 
 @app.route('/getnovelformovie/<moviename>', methods=['GET'])
 def get_novelformovie(moviename):#he novel for the corresponding movie
